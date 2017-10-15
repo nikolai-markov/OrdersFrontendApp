@@ -10,7 +10,7 @@ angular.
 	  function OrderTableController(Order) {
 	   var self = this;
 	   
-	   self.orderProp = 'date';
+	   self.orderProp = 'timestamp';
 	   self.orders = Order.query({size: 3})
 
 	   self.getOrders = function getOrders() {
