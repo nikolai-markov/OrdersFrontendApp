@@ -1,0 +1,32 @@
+<div>
+  <div>
+    <div class="order_group">
+      <p>
+        <span class="order_label">Size: </span>
+        <input class="order_input" ng-model="$ctrl.ordersSize" />
+		<button class="order_button" type="button" ng-click="$ctrl.getOrders()">Refresh</button> 
+      </p>
+
+    </div>
+    <div>
+	  
+	 <table style="border-top: 3px solid black;">
+		<thead>
+			<tr style="border-bottom: 2px dotted black;">
+				<th class="column_provider">Provider</th>
+				<th class="column_tomatoes">Tomatoes</th>
+				<th class="column_date">Sale Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="order_row" ng-repeat="order in $ctrl.orders.orders | orderBy:$ctrl.orderProp" >
+				<td>{{order.provider}}</td>
+				<td>{{order.tomatoes}}</td>
+				<td>{{$ctrl.toDate(order.timestamp)}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+    </div>
+  </div>
+</div>
